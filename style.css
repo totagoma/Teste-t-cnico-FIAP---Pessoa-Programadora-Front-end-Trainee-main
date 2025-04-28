@@ -1,0 +1,876 @@
+/* ============================================ 
+   RESET BÁSICO
+============================================ */
+body {
+    overflow-x: hidden;
+    /* Impede a rolagem horizontal */
+}
+
+* {
+    margin: 0;
+    /* Remove a margem padrão de todos os elementos */
+    padding: 0;
+    /* Remove o padding padrão de todos os elementos */
+    box-sizing: border-box;
+    /* Garante que padding e bordas não afetem as dimensões dos elementos */
+}
+
+/* ============================================ 
+   BARRA DE PROGRESSO FIXA
+============================================ */
+#progress-bar {
+    position: fixed;
+    /* Barra fixa no topo da página */
+    top: 80px;
+    /* Ajustado para ficar logo abaixo do header */
+    left: 0;
+    width: 0%;
+    /* Inicialmente a largura é 0% */
+    height: 2px;
+    background-color: #ED145B;
+    /* Cor da barra de progresso */
+    z-index: 9999;
+    /* Garante que a barra fique sobre outros elementos */
+    transition: width 0.25s ease-out;
+    /* Transição suave para o aumento da largura */
+}
+
+/* ============================================ 
+   Botão canto inferior direito
+============================================ */
+
+.scroll-to-top {
+    position: fixed;
+    right: 40px;
+    bottom: 70px;
+    width: 50px;
+    /* Tamanho do botão */
+    height: 50px;
+    /* Tamanho do botão */
+    background-image: url('assets/svg/scroll-up-arrow.svg');
+    /* Caminho da imagem */
+    background-size: 30px 40px;
+    /* Tamanho da imagem dentro do botão (pode ajustar para o que desejar) */
+    background-position: center;
+    /* Centraliza a imagem */
+    background-repeat: no-repeat;
+    /* Impede a repetição da imagem */
+    border: 1px solid #ED145B;
+    /* Borda vermelha de 2px */
+    background-color: transparent;
+    /* Fundo transparente */
+    cursor: pointer;
+    display: none;
+    /* Inicialmente invisível */
+    border-radius: 50%;
+    /* Deixa o botão arredondado */
+    z-index: 9999;
+    /* Garante que o botão fique sobre outros elementos */
+    box-shadow: 0px 4px 10px rgba(115, 112, 112, 0.3);
+    /* Sombras para dar destaque */
+    transition: box-shadow 0s ease-in-out;
+    /* Adiciona transição suave */
+}
+
+/* Efeito de brilho ao passar o mouse */
+.scroll-to-top:hover {
+    opacity: 0.8;
+    box-shadow: 0px 4px 20px rgba(255, 255, 255, 0.6);
+    /* Efeito de brilho */
+}
+
+
+/* ============================================ 
+   HEADER FIXO
+============================================ */
+/* ============================================ 
+   ESTILO DO CABEÇALHO FIXO (HEADER)
+============================================ */
+#header-principal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 80px;
+    background: #101010;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+}
+
+/* LOGO CENTRALIZADA NO HEADER */
+.logo {
+    width: 70px; /* Logo pequeno por padrão */
+    height: auto;
+    transition: width 0.3s ease-in-out; /* Animação suave na mudança de tamanho */
+}
+
+/* ============================================ 
+   SEÇÃO PRINCIPAL: HEADER-FIAP
+============================================ */
+.header-fiap {
+    width: 100%;
+    height: 100vh; /* Ajuste para ocupar 100% da altura da tela */
+    margin-top: 79px; /* Espaço para o header fixo */
+    color: white;
+    font-family: 'Gotham HTF', sans-serif;
+    position: relative;
+    overflow: hidden; /* Evita que o conteúdo ultrapasse os limites */
+}
+
+/* FUNDO COM GRADIENTE + IMAGEM */
+.header-fiap::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:
+        linear-gradient(to right, #000000 28%, #10101000 100%),
+        url('assets/svg/imgs/header.jpg') center/cover no-repeat;
+    background-size: cover; /* A imagem sempre cobre todo o fundo */
+    z-index: -1;
+    transition: background-size 0.3s ease-in-out; /* Transição suave na mudança da imagem */
+}
+
+/* CONTEÚDO DENTRO DA HEADER-FIAP */
+.header-content {
+    position: absolute;
+    top: 50%; /* Ajuste para centralizar verticalmente */
+    left: 50%; /* Ajuste para centralizar horizontalmente */
+    transform: translate(-50%, -50%); /* Centraliza totalmente */
+    width: 100%;
+    max-width: 1200px; /* Máximo de largura do conteúdo */
+    text-align: center;
+    z-index: 1;
+}
+
+/* TÍTULO PRINCIPAL */
+.header-titles h1 {
+    font-size: 80px;
+    line-height: 88px;
+    text-transform: uppercase;
+    font-family: 'Gotham', sans-serif;
+    color: transparent;
+    -webkit-text-stroke: 1px #ED145B;
+}
+
+/* SUBTÍTULO PRINCIPAL */
+.header-titles h2 {
+    font-size: 80px;
+    line-height: 88px;
+    text-transform: uppercase;
+    color: #ACC1CC;
+    margin-top: 20px;
+}
+
+/* SUBTÍTULO SECUNDÁRIO */
+.header-subtitle {
+    font-size: 20px;
+    margin-top: 20px;
+    color: #ACC1CC;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ============================================ 
+   ANIMAÇÃO DOS ELEMENTOS DE TEXTO
+============================================ */
+.header-titles h1,
+.header-titles h2,
+.header-subtitle {
+    opacity: 0;
+    transform: translateX(-50px);
+    animation: slideIn 1s forwards;
+}
+
+/* Definindo o delay para as animações */
+.header-titles h1 {
+    animation-delay: 0.3s;
+}
+
+.header-titles h2 {
+    animation-delay: 0.6s;
+}
+
+.header-subtitle {
+    animation-delay: 0.9s;
+}
+
+/* Definindo a animação */
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* ============================================ 
+   MEDIA QUERIES PARA AJUSTES EM TELAS MENORES
+============================================ */
+
+/* Para telas menores que 1024px (tablets em modo paisagem e dispositivos maiores) */
+@media (max-width: 1024px) {
+    .logo {
+        width: 60px; /* Diminuindo o logo para telas menores */
+    }
+
+    .header-fiap {
+        height: 80vh; /* Menor altura para dispositivos menores */
+    }
+
+    .header-fiap::before {
+        background-size: cover; /* A imagem se ajusta ao fundo */
+    }
+
+    .header-content {
+        top: 40%; /* Ajuste no posicionamento do conteúdo */
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .header-titles h1 {
+        font-size: 60px;
+        line-height: 70px;
+    }
+
+    .header-titles h2 {
+        font-size: 50px;
+        line-height: 60px;
+    }
+
+    .header-subtitle {
+        font-size: 18px;
+        margin-top: 15px;
+    }
+}
+
+/* Para telas menores que 768px (tablets e dispositivos pequenos) */
+@media (max-width: 768px) {
+    .logo {
+        width: 50px; /* Logo menor */
+    }
+
+    .header-fiap {
+        height: 70vh; /* Ajustando a altura */
+    }
+
+    .header-content {
+        top: 30%; /* Ajuste de posicionamento */
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .header-titles h1 {
+        font-size: 50px;
+        line-height: 60px;
+    }
+
+    .header-titles h2 {
+        font-size: 40px;
+        line-height: 50px;
+    }
+
+    .header-subtitle {
+        font-size: 16px;
+        margin-top: 10px;
+        width: 90%; /* Ajustando largura */
+    }
+}
+
+/* Para telas menores que 480px (smartphones) */
+@media (max-width: 480px) {
+    .logo {
+        width: 40px; /* Logo ainda menor */
+    }
+
+    .header-fiap {
+        height: 60vh; /* Ajustando a altura */
+    }
+
+    .header-content {
+        top: 20%; /* Ajuste no posicionamento */
+    }
+
+    .header-titles h1 {
+        font-size: 40px;
+        line-height: 50px;
+    }
+
+    .header-titles h2 {
+        font-size: 30px;
+        line-height: 40px;
+    }
+
+    .header-subtitle {
+        font-size: 14px;
+        margin-top: 8px;
+        width: 90%; /* Ajustando largura */
+    }
+}
+
+
+/* ============================================ 
+Adicionando a animação para os elementos de texto
+============================================ */
+.header-titles h1,
+.header-titles h2,
+.header-subtitle {
+    opacity: 0;
+    /* Começa invisível */
+    transform: translateX(-50px);
+    /* Começa deslocado para a esquerda */
+    animation: slideIn 1s forwards;
+    /* Aplica a animação */
+}
+
+/* Definindo o delay para as animações para cada título aparecer em sequência */
+.header-titles h1 {
+    animation-delay: 0.3s;
+}
+
+.header-titles h2 {
+    animation-delay: 0.6s;
+}
+
+.header-subtitle {
+    animation-delay: 0.9s;
+}
+
+/* Definindo a animação */
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateX(-50px);
+        /* Começa fora da tela */
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+        /* Termina na posição final */
+    }
+}
+/* ============================================ 
+   SEÇÃO EDUCAÇÃO E TECH
+============================================ */
+.educacao-tech {
+    background-color: white;
+    padding: 1% 0;
+    margin: 0px 0px 200px 0px;
+}
+/* ============================================ 
+   <h2>Educação e Tech</h2>
+============================================ */
+.coluna-imagem h2 {
+    font-family: 'Gotham HTF', sans-serif;
+    font-size: 50px; /* Reduzido para harmonizar com o layout */
+    text-transform: uppercase;
+    color: #000000; /* Rosa FIAP */
+    margin-bottom: 30px; /* Espaço entre o h2 e o parágrafo */
+    text-align: left; /* Alinhamento à esquerda */
+}
+
+/* ============================================ 
+   SEÇÃO EDUCAÇÃO E TECH
+============================================ */
+.educacao-tech {
+    background-color: white;
+    padding: 1% 0;
+    margin: 0px 0px 200px 0px;
+}
+
+/* ============================================ 
+   TÍTULO EDUCAÇÃO E TECH
+============================================ */
+.educacao-tech h2 {
+    font-family: 'Gotham HTF', sans-serif;
+    font-size: 40px; /* Tamanho para desktop */
+    line-height: 1.1;
+    text-transform: uppercase;
+    color: #101010;
+    text-align: left; /* Alinhamento à esquerda */
+    margin-left: 40px; /* Remove qualquer margem à esquerda */
+    margin-top: 50px; /* Adiciona margem superior */
+    margin-bottom: 20px; /* Distância entre o título e o conteúdo abaixo */
+}
+
+/* Responsividade: Ajuste para telas menores */
+@media (max-width: 768px) {
+    .educacao-tech h2 {
+        font-size: 60px; /* Tamanho do título reduzido em telas pequenas */
+        margin-left: 5%; /* Ajusta o alinhamento para telas menores */
+        margin-top: 20px; /* Margem superior reduzida */
+        margin-bottom: 15px; /* Distância do título para o conteúdo abaixo */
+        text-align: left; /* Manter o alinhamento à esquerda em telas pequenas */
+    }
+
+    .container-educacao-tech {
+        flex-direction: column; /* Empilhar as colunas em telas pequenas */
+        padding: 0 5%; /* Reduzir o padding para telas menores */
+    }
+
+    .coluna-imagem, .coluna-textos {
+        width: 100%; /* Garantir que cada coluna ocupe 100% da largura */
+    }
+
+    .coluna-imagem {
+        margin-bottom: 20px; /* Adicionar espaçamento entre as colunas quando empilhadas */
+    }
+}
+
+/* CONTAINER GERAL DA SEÇÃO */
+.container-educacao-tech {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    gap: 10%;
+    margin: 0 auto;
+    padding: 0 13%; /* Ajuste do padding nas laterais */
+}
+
+/* COLUNA DE IMAGEM */
+.coluna-imagem {
+    flex: 1; /* Ocupa a mesma largura que a coluna de texto */
+    padding: 0 0 20px 0; /* Padding para manter um espaço abaixo da imagem */
+}
+
+.coluna-imagem img {
+    width: 100%;
+    max-width: 670px;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    margin: 0 auto;
+}
+
+/* COLUNA DE TEXTO */
+.coluna-textos {
+    flex: 1;
+    padding: 0;
+}
+
+
+/* Responsividade: Em telas menores, empilhar as colunas */
+@media (max-width: 768px) {
+    .container-educacao-tech {
+        flex-direction: column; /* Empilhar as colunas */
+        padding: 0 5%; /* Reduzir o padding para telas menores */
+    }
+
+    .coluna-imagem, .coluna-textos {
+        width: 100%; /* Garantir que cada coluna ocupe 100% da largura */
+    }
+
+    .coluna-imagem {
+        margin-bottom: 20px; /* Adicionar espaçamento entre as colunas quando empilhadas */
+    }
+
+    /* Ajustes no h2 */
+    .educacao-tech h2 {
+        font-size: 60px; /* Ajustar o tamanho do título em telas pequenas */
+        margin-bottom: 15px; /* Diminuir a margem inferior para mais proximidade */
+    }
+}
+
+
+
+/* ESTILO PARA O PARÁGRAFO NA COLUNA DE TEXTOS */
+.coluna-textos p {
+    font-family: 'Gotham HTF', sans-serif;
+    font-weight: normal;
+    font-size: 20px;
+    text-align: justify;
+    margin-bottom: 30px;
+}
+
+/* LISTAGEM NA COLUNA DE TEXTOS */
+.coluna-textos ul {
+    font-family: 'Gotham HTF', sans-serif;
+    list-style-type: none;
+    margin: 30px 0;
+    padding: 0;
+}
+
+/* ITEM DA LISTA */
+.coluna-textos li {
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 1.4;
+    margin: 10px 0;
+    padding-left: 30px;
+    position: relative;
+}
+
+/* TÍTULO DA LISTA */
+.lista-titulo {
+    font-weight: bold;
+    font-size: 20px;
+    margin-top: 20px;
+    padding-left: 0;
+}
+
+/* TECNOLOGIA DESTACADA NA LISTA */
+.tecnologia-item {
+    color: #ED145B;
+    font-weight: bold;
+    margin: 20px 25px !important;
+}
+
+/* MARCADOR PERSONALIZADO PARA ITENS DA LISTA */
+.coluna-textos li::before {
+    content: "-";
+    position: relative;
+    left: -10px;
+    color: #ED145B;
+}
+
+/* TÍTULO DA LISTA COM ESTILO */
+.coluna-textos .lista-titulo {
+    font-weight: 700;
+    font-size: 24px;
+    color: #555555;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+/* MARCADOR PARA O TÍTULO DA LISTA */
+.coluna-textos .lista-titulo::before {
+    content: "/ ";
+    font-size: 20px;
+    font-weight: bold;
+    position: absolute;
+    left: 15px;
+    top: 0;
+    color: #ED145B;
+}
+/* ============================================ 
+   TESTE
+============================================ */
+
+/* Estilo para os ícones + e - dentro das bolinhas */
+.toggle-icon {
+    width: 35px;
+    /* Tamanho do círculo */
+    height: 35px;
+    /* Tamanho do círculo */
+    background-color: transparent;
+    /* Fundo transparente */
+    border: 1px solid red;
+    /* Borda vermelha */
+    border-radius: 50%;
+    /* Forma redonda */
+    display: flex;
+    justify-content: center;
+    /* Alinha horizontalmente */
+    align-items: center;
+    /* Alinha verticalmente */
+    font-size: 25px;
+    /* Tamanho do ícone + ou - */
+    font-weight: normal;
+    /* Deixa o ícone mais leve */
+    color: red;
+    /* Cor do ícone */
+    transition: transform 0.3s ease;
+    /* Transição suave */
+    cursor: pointer;
+    /* Indica que o ícone é clicável */
+}
+
+/* Para o ícone de aberto (expandido), rotacionando o ícone */
+.item-texto-imagem.open h3 .toggle-icon {
+    transform: rotate(180deg);
+    /* Rotaciona o ícone para o símbolo "-" */
+}
+
+/* Estilo do item que contém o parágrafo e o ícone */
+.item-texto-imagem h3 {
+    display: flex;
+    justify-content: space-between;
+    /* Distribui o conteúdo entre o título e o ícone */
+    align-items: center;
+    /* Alinha o título e o ícone verticalmente */
+    width: 100%;
+    /* Garante que o h3 ocupe toda a largura disponível */
+}
+
+/* Estilo do botão para o ícone de abrir/fechar */
+.item-texto-imagem h3 .toggle-icon {
+    margin-left: 10px;
+    /* Espaço entre o título e o ícone */
+}
+
+/* Para os itens de parágrafo, inicialmente fechados */
+.item-texto-imagem p {
+    display: none;
+    /* Esconde os parágrafos inicialmente */
+}
+
+/* Para os itens de parágrafo quando estão abertos */
+.item-texto-imagem.open p {
+    display: block;
+    /* Exibe o parágrafo quando o item estiver aberto */
+}
+
+/* ============================================ 
+   SEÇÃO ESTRUTURA - IMAGEM DE FUNDO FIXA
+============================================ */
+#estrutura {
+    position: relative;
+    background-image: url('assets/svg/imgs/break-image.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    width: 100%;
+    height: 70vh;
+    padding: 100px 0;
+    color: white;
+}
+
+/* ============================================ 
+   SEÇÃO TEXTO IMAGEM COM FUNDO PRETO
+============================================ */
+.texto-imagem-preto h2 {
+    color: #ACC1CC;
+    font-size: 80px;
+    text-transform: uppercase;
+    margin-bottom: 75px;
+    font-weight: 500;
+    text-align: left;
+    padding-left: 130px;
+}
+
+.texto-imagem-preto {
+    background: radial-gradient(circle at left 35%, #006BB780 0%, #000000 30%),
+        radial-gradient(circle at right center, #006BB780 0%, #000000 30%),
+        #000000;
+    background-blend-mode: lighten;
+    padding-top: 200px;
+    padding-right: 416px;
+    padding-bottom: 220px;
+    width: 100%;
+    min-height: 75vh;
+    max-width: 100%;
+    box-sizing: border-box;
+    font-family: 'Gotham HTF', sans-serif;
+}
+
+.item-texto-imagem {
+    padding-left: 200px;
+}
+
+.item-texto-imagem p {
+    display: none;
+    margin-top: 10px;
+}
+
+.item-texto-imagem {
+    cursor: pointer;
+}
+
+.container-estrutura {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+}
+
+.texto-imagem-preto h3 {
+    color: #ACC1CC;
+    font-size: 28px;
+    margin: 40px 0 20px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.texto-imagem-preto p {
+    color: #AFAFAF;
+    font-size: 18px;
+    margin-bottom: 20px;
+    padding-left: 0px;
+}
+
+.item-texto-imagem {
+    margin-bottom: 20px;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.3s ease-in-out;
+}
+
+.item-texto-imagem p {
+    display: inline-block;
+    width: 100%;
+}
+
+/* ============================================ 
+   FOOTER (RODAPÉ)
+============================================ */
+.footer {
+    background-color: #000000 !important;
+    text-align: center;
+    height: 60vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Gotham HTF', sans-serif;
+    font-weight: 500;
+}
+
+.footer-texto h3 {
+    color: #ACC1CC;
+    font-size: 80px;
+    text-transform: uppercase;
+    margin-top: 20px;
+    position: relative;
+    top: -100px;
+}
+
+/* ============================================ 
+   BOTÃO ENTRE EM CONTATO (ESTILOS COMPLETOS)
+============================================ */
+.btn-contato {
+    background: transparent;
+    /* Fundo transparente */
+    color: #ED145B;
+    /* Cor do texto */
+    border: 1px solid #ED145B;
+    /* Borda vermelha */
+    padding: 12px 24px;
+    /* Espaçamento interno */
+    border-radius: 2px;
+    /* Bordas levemente arredondadas */
+    font-size: 30px;
+    /* Tamanho da fonte */
+    transition: all 0.3s ease;
+    /* Transição suave para todos os efeitos */
+    cursor: pointer;
+    /* Cursor pointer */
+    font-family: 'Gotham HTF', sans-serif;
+    /* Fonte personalizada */
+    text-transform: uppercase;
+    /* Texto em maiúsculas */
+    letter-spacing: 1px;
+    /* Espaçamento entre letras */
+    position: relative;
+    /* Posição relativa para efeitos */
+    overflow: hidden;
+    /* Esconde overflow para efeitos */
+    z-index: 1;
+    /* Camada superior */
+    margin-top: 30px;
+    /* Espaço acima do botão */
+}
+
+/* Efeito hover no botão */
+.btn-contato:hover {
+    background: #ED145B;
+    /* Fundo vermelho */
+    color: rgb(0, 0, 0);
+    /* Cor do texto muda para preto */
+    box-shadow: 0 0 10px rgba(237, 20, 91, 0.5);
+    /* Sombra vermelha */
+    font-weight: 500;
+    /* Peso da fonte */
+}
+
+/* Efeito de brilho ao passar o mouse */
+.btn-contato::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.2),
+        transparent
+    );
+    transition: 0.5s;
+    z-index: -1;
+}
+
+.btn-contato:hover::before {
+    left: 100%;
+}
+
+/* ============================================ 
+   ESTILOS DO LIGHTBOX
+============================================ */
+.lightbox-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.lightbox-container {
+    position: relative;
+    max-width: 90%;
+    max-height: 90%;
+}
+
+.lightbox-image {
+    max-width: 100%;
+    max-height: 80vh;
+    border: 2px solid #fff;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+}
+
+.lightbox-close {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.lightbox-close:hover {
+    color: #ED145B;
+}
+
+/* ============================================ 
+   ESTILOS DE CURSOR PERSONALIZADO
+============================================ */
+/* Cursor na imagem original */
+.coluna-imagem img {
+    cursor: url('assets/svg/cursor-open.svg'), auto;
+}
+
+/* Hover na imagem original */
+.coluna-imagem img:hover {
+    cursor: url('assets/svg/cursor-open.svg'), pointer;
+}
+
+/* Lightbox aberto - fundo escuro */
+.lightbox-overlay {
+    cursor: url('assets/svg/cursor-close.svg'), auto;
+}
+
+/* Imagem ampliada - substitui a lupa padrão */
+.lightbox-image {
+    cursor: url('assets/svg/cursor-close.svg'), url('assets/svg/cursor-close.svg'),
+        url('assets/cursors/zoom-out.svg'), auto !important;
+}
+
+/* Botão de fechar */
+.lightbox-close {
+    cursor: url('assets/cursors/close-modal.png'), auto;
+}

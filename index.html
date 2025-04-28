@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ptbrR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="assets/svg/favicon.ico" type="image/x-icon">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <!-- Barra de progresso da página -->
+    <div id="progress-bar"></div>
+
+    <!-- Botão para rolar para o topo -->
+    <button id="scrollToTop" class="scroll-to-top"></button>
+
+    <!-- Cabeçalho / Navegação -->
+    <header id="header-principal">
+        <div class="container-header"> <!-- Contêiner para o logo e navegação -->
+            <img src="assets/svg/logo.svg" alt="Logo Instituição" class="logo" />
+        </div>
+    </header>
+
+    <!-- Seção de introdução (Header) -->
+    <section class="header-fiap">
+        <div class="header-content">
+            <div class="header-titles">
+                <h1>A maior faculdade</h1>
+                <h2>De tecnologia</h2>
+            </div>
+            <p class="header-subtitle">
+                Referência em tecnologia e inovação no Brasil, a FIAP é uma faculdade que prepara
+                profissionais para o futuro, com um ensino prático, professores atuantes no mercado e desafios reais que
+                conectam os alunos às grandes empresas.
+            </p>
+        </div>
+    </section>
+
+    <!-- Seção Educação e Tecnologia -->
+    <section id="educacao-tech" class="educacao-tech">
+        <h2>Educação e Tech</h2>
+        <div class="container-educacao-tech">
+            <!-- Coluna de imagem (à esquerda) -->
+            <div class="coluna-imagem">
+                <p>
+                    A FIAP é muito mais do que uma faculdade de tecnologia, é um verdadeiro ecossistema de inovação e
+                    aprendizado. Conhecida por sua abordagem moderna e focada no mercado, a instituição é referência
+                    quando se trata de formar profissionais capacitados para os desafios do futuro.
+                </p>
+                <img src="assets/svg/imgs/fiap-next.jpg" alt="Imagem fundo next">
+                <p>texto</p>
+            </div>
+
+            <!-- Coluna de texto (à direita) -->
+            <div class="coluna-textos">
+                <p>
+                    Com um corpo docente formado por profissionais atuantes no mercado, a FIAP não ensina apenas
+                    tecnologia, mas também negócios, inovação e liderança. Seus cursos abrangem diversas áreas,
+                    incluindo:
+                </p>
+                <ul>
+                    <li class="lista-titulo">Tecnologia e Desenvolvimento</li>
+                    <li class="tecnologia-item">Desenvolvimento de Software</li>
+                    <li class="tecnologia-item">Inteligência Artificial</li>
+                    <li class="tecnologia-item">Data Science</li>
+                    <li class="tecnologia-item">Cibersegurança</li>
+                    <li class="lista-titulo">UX/UI, Marketing Digital</li>
+                    <li class="lista-titulo">Metodologias e Gestão</li>
+                </ul>
+                <p>
+                    Além disso, a instituição incentiva fortemente o uso dessas metodologias e outras abordagens
+                    inovadoras que fazem parte do dia a dia de grandes empresas.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Estrutura (em cinza) -->
+    <section id="estrutura" class="section bg-cinza">
+    </section>
+
+    <!-- Seção com Texto da Imagem em Fundo Preto -->
+    <section class="texto-imagem-preto">
+        <h2>Nossa Estrutura</h2>
+        <div class="container-estrutura">
+            <!-- Tópicos expansíveis sobre a estrutura -->
+            <div class="item-texto-imagem" onclick="toggleVisibility(this)">
+                <h3>Conexão com o Mercado de Trabalho <span class="toggle-icon">+</span></h3>
+                <p>
+                    A FIAP se destaca não apenas pelo seu ensino inovador, mas também pela forma como conecta seus
+                    alunos ao mercado de trabalho. A instituição tem parcerias com algumas das maiores empresas de
+                    tecnologia do mundo, permitindo que seus estudantes participem de desafios reais, hackathons e
+                    programas de mentoria...
+                </p>
+            </div>
+    
+            <div class="item-texto-imagem" onclick="toggleVisibility(this)">
+                <h3>Aprendizado Inovador <span class="toggle-icon">+</span></h3>
+                <p>
+                    Outro diferencial da FIAP é a sua estrutura moderna, pensada para proporcionar uma experiência de
+                    aprendizado imersiva e dinâmica. Os laboratórios contam com equipamentos de ponta e softwares
+                    atualizados, permitindo que os alunos experimentem na prática as tecnologias...
+                </p>
+            </div>
+    
+            <div class="item-texto-imagem" onclick="toggleVisibility(this)">
+                <h3>Ensino Personalizado <span class="toggle-icon">+</span></h3>
+                <p>
+                    A instituição também aposta na personalização do ensino, oferecendo cursos e trilhas de aprendizado
+                    que se adaptam aos diferentes perfis de profissionais. Seja para quem deseja seguir carreira no
+                    desenvolvimento de software, na ciência de dados...
+                </p>
+            </div>
+    
+            <div class="item-texto-imagem" onclick="toggleVisibility(this)">
+                <h3>Inovação e Transformação <span class="toggle-icon">+</span></h3>
+                <p>
+                    Por fim, a FIAP se destaca por seu compromisso com a inovação e a transformação digital. A faculdade
+                    não apenas ensina tecnologia, mas a utiliza para melhorar a experiência de aprendizado, com
+                    plataformas interativas, inteligência artificial aplicada ao ensino...
+                </p>
+            </div>
+        </div>
+    </section>
+    
+
+    <!-- Rodapé -->
+    <footer id="contato" class="footer">
+        <div class="footer-texto">
+            <h3>Quer saber mais?</h3>
+        </div>
+        <div class="container-footer">
+            <button class="btn-contato">Entre em Contato</button>
+        </div>
+    </footer>
+
+    <!-- Lightbox -->
+    <div class="lightbox-overlay">
+        <div class="lightbox-container">
+            <span class="lightbox-close">&times;</span>
+            <img class="lightbox-image" src="" alt="Imagem ampliada">
+        </div>
+    </div>
+
+</body>
+
+</html>
