@@ -551,8 +551,24 @@ Adicionando a animação para os elementos de texto
     top: 0;
     color: #ED145B;
 }
+
 /* ============================================ 
-   TESTE
+   SEÇÃO ESTRUTURA - IMAGEM DE FUNDO FIXA
+============================================ */
+#estrutura {
+    position: relative;
+    background-image: url('assets/svg/imgs/break-image.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    width: 100%;
+    height: 70vh;
+    padding: 100px 0;
+    color: white;
+}
+
+/* ============================================ 
+   Seção com Texto da Imagem em Fundo Preto
 ============================================ */
 
 /* Estilo para os ícones + e - dentro das bolinhas */
@@ -619,20 +635,7 @@ Adicionando a animação para os elementos de texto
     /* Exibe o parágrafo quando o item estiver aberto */
 }
 
-/* ============================================ 
-   SEÇÃO ESTRUTURA - IMAGEM DE FUNDO FIXA
-============================================ */
-#estrutura {
-    position: relative;
-    background-image: url('assets/svg/imgs/break-image.jpg');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    width: 100%;
-    height: 70vh;
-    padding: 100px 0;
-    color: white;
-}
+
 
 /* ============================================ 
    SEÇÃO TEXTO IMAGEM COM FUNDO PRETO
