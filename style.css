@@ -640,9 +640,18 @@ Adicionando a animação para os elementos de texto
 /* ============================================ 
    SEÇÃO TEXTO IMAGEM COM FUNDO PRETO
 ============================================ */
+/* ============================================ 
+   SEÇÃO TEXTO IMAGEM COM FUNDO PRETO
+============================================ */
+
+/* ============================================ 
+   SEÇÃO TEXTO IMAGEM COM FUNDO PRETO
+============================================ */
+
+/* Título h2 */
 .texto-imagem-preto h2 {
     color: #ACC1CC;
-    font-size: 80px;
+    font-size: 80px; /* Tamanho de fonte para desktop */
     text-transform: uppercase;
     margin-bottom: 75px;
     font-weight: 500;
@@ -650,13 +659,53 @@ Adicionando a animação para os elementos de texto
     padding-left: 130px;
 }
 
+/* Ajustes para telas menores */
+@media (max-width: 768px) {
+    .texto-imagem-preto h2 {
+        font-size: 60px; /* Tamanho reduzido para dispositivos móveis */
+        margin-bottom: 50px; /* Distância inferior reduzida */
+        padding-left: 20px; /* Menor padding à esquerda */
+        text-align: center; /* Alinhamento centralizado */
+    }
+
+    .texto-imagem-preto {
+        padding-top: 100px;
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+
+    .item-texto-imagem {
+        padding-left: 20px; /* Menor padding para itens */
+    }
+
+    .texto-imagem-preto h3 {
+        font-size: 24px; /* Reduzindo o tamanho para mobile */
+        margin: 20px 0 10px;
+        width: 90%; /* Garantir que o h3 não fique comprimido */
+    }
+
+    .texto-imagem-preto p {
+        font-size: 16px; /* Tamanho da fonte ajustado */
+        margin-bottom: 15px; /* Menor margem inferior */
+        width: 90%; /* Garantir que o parágrafo não fique comprimido */
+    }
+
+    .toggle-icon {
+        width: 30px; /* Tamanho do ícone */
+        height: 30px;
+        font-size: 20px;
+    }
+}
+
+/* Estilo para o container com fundo preto */
 .texto-imagem-preto {
     background: radial-gradient(circle at left 35%, #006BB780 0%, #000000 30%),
         radial-gradient(circle at right center, #006BB780 0%, #000000 30%),
         #000000;
     background-blend-mode: lighten;
     padding-top: 200px;
-    padding-right: 416px;
+    padding-right: 0px; /* Removido o padding direito */
+    padding-left: 0px; /* Removido o padding esquerdo */
     padding-bottom: 220px;
     width: 100%;
     min-height: 75vh;
@@ -665,51 +714,101 @@ Adicionando a animação para os elementos de texto
     font-family: 'Gotham HTF', sans-serif;
 }
 
+/* Estilo para os itens com texto expansível */
 .item-texto-imagem {
-    padding-left: 200px;
+    padding-left: 0px; /* Removido padding esquerdo */
+    margin-bottom: 20px;
+    width: 100%; /* Aumentando a largura dos itens para ocupar 100% do container */
+    max-width: 100%; /* Garantir que a largura não ultrapasse 100% */
+    margin: 0 auto; /* Centralizando */
+    padding-right: 0px; /* Removido o padding direito */
 }
 
 .item-texto-imagem p {
     display: none;
     margin-top: 10px;
+    width: 100%;
 }
 
+/* Estilo dos itens de texto expansível com borda inferior */
 .item-texto-imagem {
     cursor: pointer;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.3s ease-in-out;
 }
 
+/* Container que envolve os itens */
 .container-estrutura {
     display: flex;
     flex-direction: column;
     gap: 10px;
     padding: 20px;
+    width: 100%; /* Agora ocupa 100% da largura da tela */
+    margin: 0 auto; /* Centralizando */
 }
 
+/* Subtítulo h3 */
 .texto-imagem-preto h3 {
     color: #ACC1CC;
     font-size: 28px;
     margin: 40px 0 20px;
     font-weight: 500;
     text-transform: uppercase;
+    width: 100%; /* Agora ocupa toda a largura do container */
+    max-width: 100%; /* Garantir que o h3 ocupe 100% da largura do container */
+    margin: 0 auto; /* Centralizando */
 }
 
+/* Parágrafo p */
 .texto-imagem-preto p {
     color: #AFAFAF;
     font-size: 18px;
     margin-bottom: 20px;
     padding-left: 0px;
+    width: 100%; /* Agora ocupa toda a largura do container */
+    max-width: 100%; /* Garantir que o parágrafo ocupe 100% da largura */
+    margin: 0 auto; /* Centralizando */
 }
 
-.item-texto-imagem {
-    margin-bottom: 20px;
-    border-bottom: 2px solid transparent;
-    transition: border-color 0.3s ease-in-out;
+/* Ícones + e - dentro das bolinhas */
+.toggle-icon {
+    width: 35px; /* Tamanho do ícone */
+    height: 35px;
+    background-color: transparent;
+    border: 1px solid red;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    color: red;
+    transition: transform 0.3s ease;
+    cursor: pointer;
 }
 
-.item-texto-imagem p {
-    display: inline-block;
+/* Ícone quando o item está aberto (rotacionando para -) */
+.item-texto-imagem.open h3 .toggle-icon {
+    transform: rotate(180deg); /* Rotaciona o ícone */
+}
+
+/* Estilo do item de parágrafo e o ícone */
+.item-texto-imagem h3 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     width: 100%;
 }
+
+/* Estilo do botão para o ícone de abrir/fechar */
+.item-texto-imagem h3 .toggle-icon {
+    margin-left: 10px;
+}
+
+/* Quando o item de parágrafo está aberto */
+.item-texto-imagem.open p {
+    display: block;
+}
+
 
 /* ============================================ 
    FOOTER (RODAPÉ)
