@@ -1,69 +1,93 @@
-# Teste-tecnico-FIAP---Pessoa-Programadora-Front-end-Trainee
- DevFrond Desafio
-# Projeto Front-End - Página Web Interativa
+# Teste Técnico FIAP — Pessoa Programadora Front-end Trainee
 
-Este repositório contém a implementação de uma página web interativa, desenvolvida como parte de uma prova de **Desenvolvimento Front-End**. O projeto foi construído utilizando **HTML**, **CSS** e **JavaScript**, com o objetivo de demonstrar habilidades em design de páginas responsivas, animações e interações dinâmicas com o usuário.
+🎯 Objetivo do Projeto
+Este repositório apresenta minha solução para o desafio técnico do processo seletivo de estágio da FIAP, que consistia em desenvolver uma página web interativa utilizando HTML, CSS e JavaScript. O projeto foi criado com foco em:
 
-## Tecnologias Utilizadas
+Implementação do layout proposto no Figma
 
-- **HTML5**: Estruturação semântica da página, criando um layout limpo e organizado.
-- **CSS3**: Estilização avançada com foco em responsividade e design visual atrativo, utilizando Flexbox e animações CSS.
-- **JavaScript (ES6)**: Criação de interações dinâmicas e manipulação de eventos no navegador, como animações de elementos e controle de estado.
+Demonstração de habilidades técnicas em front-end
 
-## Funcionalidades
+Atenção aos detalhes de design e usabilidade 
 
-1. **Layout Responsivo**
+**Funcionalidades implementadas:**
 
-   - A página é completamente responsiva, adaptando-se a diferentes tamanhos de tela, utilizando **Flexbox** e **Media Queries**.
+- ✅ Barra de progresso dinâmica no scroll  
+- ✅ Botão "Voltar ao topo" funcional  
+- ✅ Seções expansíveis (acordeão) interativas  
+- ✅ Lightbox para visualização de imagens  
+- ✅ Design responsivo para mobile e desktop  
+- ✅ Animações CSS personalizadas  
+- ✅ Efeitos hover detalhados  
 
-2. **Animações**
+---
 
-   - Animações CSS foram implementadas para criar transições suaves e interações visuais agradáveis, como hover effects, animação de entrada de elementos, e transformações de objetos.
+## 📱 Responsividade
 
-3. **Interações Dinâmicas com JavaScript**
+| Dispositivo | Breakpoint | Ajustes aplicados |
+|------------|------------|-------------------|
+| Mobile     | <480px     | Menu compacto, fontes reduzidas |
+| Tablet     | 768px      | Layout em coluna única |
+| Desktop    | >1024px    | Design completo |
 
-   - Uso de **JavaScript** para manipular eventos e criar interações com o usuário, como:
-     - Exibição dinâmica de informações.
-     - Animações controladas pelo usuário (como cliques e hover).
-     - Mudanças no estilo de elementos com base em interações.
+---
 
-## Instalação
+## ⚙️ Funcionalidades Técnicas
 
-1. Clone o repositório:
+### 🔹 Sistema de Acordeão:
+- Animações CSS com aceleração por hardware  
+- Acessível via teclado  
+- Estado preservado durante a interação  
 
-   ```bash
-   git clone https://github.com/seu-usuario/seu-projeto-web.git
-   ```
+### 🔹 Lightbox:
+- Zoom suave com transform  
+- Cursor customizado  
+- Fechamento por clique fora da imagem ou tecla ESC  
+
+### 🔹 Microinterações:
+- Efeitos hover em botões  
+- Feedback visual ao rolar a página  
+- Transições suaves entre seções  
+
+---
+
+## 🔍 Notas do Candidato
+
+Este projeto foi desenvolvido com especial atenção a:
+
+- **Semântica HTML**: Uso correto e estratégico de tags  
+- **CSS Maintainable**: Metodologia BEM aplicada  
+- **JavaScript Modular**: Funções puras e reutilizáveis  
+- **Acessibilidade**: Atributos ARIA, contraste e navegação via teclado  
+- **UI Refinado**: Cursor customizado, animações suaves, fluidez  
+
+---
+
+## 🛠️ Tecnologias Utilizadas
+
+- **HTML5** – Estrutura semântica da página  
+- **CSS3** – Layout responsivo, animações e microinterações  
+- **JavaScript (Vanilla)** – Interações dinâmicas e manipulação do DOM  
+
+---
+
+## 🚀 Como Executar o Projeto Localmente
+
+1. Clone o repositório ou faça o download do arquivo .zip do projeto.
+
 
 2. Navegue até o diretório do projeto:
+   cd Teste-tecnico-FIAP---Pessoa-Programadora-Front-end-Trainee
 
-   ```bash
-   cd seu-projeto-web
-   ```
+ Teste-tecnico-FIAP---Pessoa-Programadora-Front-end-Trainee
 
-3. Abra o arquivo `index.html` no seu navegador para visualizar a página:
+3. Abra o arquivo index.htm` no navegador:
+   - No macOS: open index.html
+   - No Windows: start index.html
+   - No Linux: xdg-open index.html
 
-   ```bash
-   open index.html
-   ```
+ Alternativamente, basta clicar duas vezes no arquivo index.html para abri-lo no navegador.
 
-## Demonstração
 
-A página web contém animações e interações como efeitos de transição em botões, elementos que aparecem/desaparecem com animações, e outros comportamentos interativos que melhoram a experiência do usuário.
-
-## Objetivo do Projeto
-
-Este projeto foi desenvolvido para demonstrar habilidades de desenvolvimento **Front-End** utilizando **HTML**, **CSS** e **JavaScript**. O foco foi em:
-
-- Criar uma interface limpa e intuitiva.
-- Implementar animações e interações que melhoram a experiência do usuário.
-- Aplicar os conceitos de responsividade e design adaptativo.
-
-## Licença
-
-Este projeto está licenciado sob a Licença MIT - veja o arquivo [LICENSE](LICENSE) para mais detalhes.
-
-### Sobre o Desenvolvimento
-
-Este trabalho faz parte da minha jornada como **Desenvolvedor Front-End**, com foco em criar interfaces de usuário interativas e bem estruturadas. Estou atualmente em um processo de aprimoramento contínuo, para melhorar minha habilidade no desenvolvimento de interfaces mais ricas e funcionais.
-
+📄 Licença  
+Este projeto foi desenvolvido exclusivamente para fins de avaliação técnica e não possui fins comerciais.  
+Caso decida utilizar partes do código, esteja ciente de que este repositório não possui uma licença aberta.

@@ -403,49 +403,6 @@ body {
     }
 }
 
-
-/* ============================================ 
-Adicionando a animação para os elementos de texto
-============================================ */
-.header-titles h1,
-.header-titles h2,
-.header-subtitle {
-    opacity: 0;
-    /* Começa invisível */
-    transform: translateX(-50px);
-    /* Começa deslocado para a esquerda */
-    animation: slideIn 1s forwards;
-    /* Aplica a animação */
-}
-
-/* Definindo o delay para as animações para cada título aparecer em sequência */
-.header-titles h1 {
-    animation-delay: 0.3s;
-}
-
-.header-titles h2 {
-    animation-delay: 0.6s;
-}
-
-.header-subtitle {
-    animation-delay: 0.9s;
-}
-
-/* Definindo a animação */
-@keyframes slideIn {
-    0% {
-        opacity: 0;
-        transform: translateX(-50px);
-        /* Começa fora da tela */
-    }
-
-    100% {
-        opacity: 1;
-        transform: translateX(0);
-        /* Termina na posição final */
-    }
-}
-
 /* ============================================ 
    SEÇÃO EDUCAÇÃO E TECH
 ============================================ */
