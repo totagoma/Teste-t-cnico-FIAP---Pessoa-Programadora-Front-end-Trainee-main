@@ -41,7 +41,7 @@ Atenção aos detalhes de design e usabilidade
 ### 🔹 Lightbox:
 - Zoom suave com transform  
 - Cursor customizado  
-- Fechamento por clique fora da imagem ou tecla ESC  
+- Fechamento por clique fora da imagem 
 
 ### 🔹 Microinterações:
 - Efeitos hover em botões  
