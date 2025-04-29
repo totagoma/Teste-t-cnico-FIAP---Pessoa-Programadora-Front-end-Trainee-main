@@ -39,18 +39,11 @@ body {
 }
 
 /* Ajustes para garantir responsividade da barra de progresso */
-@media (max-width: 768px) {
-    #progress-bar {
-        top: 60px;
-        /* Ajuste para telas menores */
-        height: 1.5px;
-        /* Largura da barra reduzida em telas menores */
-    }
-}
+
 
 @media (max-width: 480px) {
     #progress-bar {
-        top: 50px;
+        top: 80px;
         /* Ajuste adicional para telas pequenas */
         height: 1px;
         /* Barra ainda mais fina */
@@ -142,7 +135,7 @@ body {
     width: 100%;
     height: 100vh;
     /* Ajuste para ocupar 100% da altura da tela */
-    margin-top: 79px;
+    margin-top: 80px;
     /* Espaço para o header fixo */
     color: white;
     font-family: 'Gotham HTF', sans-serif;
@@ -150,6 +143,7 @@ body {
     overflow: hidden;
     /* Evita que o conteúdo ultrapasse os limites */
 }
+
 
 /* FUNDO COM GRADIENTE + IMAGEM */
 .header-fiap::before {
@@ -194,7 +188,7 @@ body {
     text-transform: uppercase;
     font-family: 'Gotham', sans-serif;
     color: transparent;
-    -webkit-text-stroke: 1px #ED145B;
+    -webkit-text-stroke: 2px #ED145B;
     opacity: 0;
     /* Começa invisível */
     transform: translateX(-50px);
@@ -298,39 +292,35 @@ body {
         /* Move para a posição original */
     }
 }
-
 /* ============================================ 
    MEDIA QUERIES PARA AJUSTES EM TELAS MENORES
 ============================================ */
 
-/* Para telas menores que 1024px (tablets em modo paisagem e dispositivos maiores) */
+/* Para telas menores que 1024px */
 @media (max-width: 1024px) {
     .logo {
         width: 60px;
-        /* Diminuindo o logo para telas menores */
     }
 
     .header-fiap {
         height: 80vh;
-        /* Menor altura para dispositivos menores */
+        background-position: center 30%; /* Ajusta o enquadramento da imagem */
     }
 
     .header-fiap::before {
         background-size: cover;
-        /* A imagem se ajusta ao fundo */
     }
 
     .header-content {
-        top: 40%;
-        /* Ajuste no posicionamento do conteúdo */
-        left: 50%;
-        transform: translateX(-50%);
+        top: 70%; /* Posiciona mais para baixo */
+        left: 0;
+        transform: translateY(-50%);
+        padding-left: 8vh;
     }
 
     .header-titles h1 {
         font-size: 3.75rem;
         line-height: 4.375rem;
-        /* Ajuste para melhor legibilidade */
     }
 
     .header-titles h2 {
@@ -344,23 +334,21 @@ body {
     }
 }
 
-/* Para telas menores que 768px (tablets e dispositivos pequenos) */
+/* Para telas menores que 768px */
 @media (max-width: 768px) {
     .logo {
         width: 50px;
-        /* Logo menor */
     }
 
     .header-fiap {
         height: 70vh;
-        /* Ajustando a altura */
     }
 
     .header-content {
-        top: 30%;
-        /* Ajuste de posicionamento */
-        left: 50%;
-        transform: translateX(-50%);
+        top: 65%; /* Ajuste fino para tablets */
+        left: 0;
+        transform: translateY(-50%);
+        padding-left: 5vh;
     }
 
     .header-titles h1 {
@@ -377,30 +365,30 @@ body {
         font-size: 1rem;
         margin-top: 0.75rem;
         width: 90%;
-        /* Ajustando largura */
     }
 }
 
-/* Para telas menores que 480px (smartphones) */
+/* Para telas menores que 480px */
 @media (max-width: 480px) {
     .logo {
         width: 40px;
-        /* Logo ainda menor */
     }
 
     .header-fiap {
         height: 60vh;
-        /* Ajustando a altura */
     }
 
     .header-content {
-        top: 20%;
-        /* Ajuste no posicionamento */
+        top: 60%; /* Posição mais baixa em mobile */
+        left: 0;
+        transform: translateY(-50%);
+        padding-left: 3vh;
     }
 
     .header-titles h1 {
         font-size: 2.5rem;
         line-height: 3rem;
+        -webkit-text-stroke: 1px #ED145B;
     }
 
     .header-titles h2 {
@@ -412,7 +400,6 @@ body {
         font-size: 0.875rem;
         margin-top: 0.5rem;
         width: 90%;
-        /* Ajustando largura */
     }
 }
 
@@ -464,7 +451,7 @@ Adicionando a animação para os elementos de texto
 ============================================ */
 .educacao-tech {
     background-color: white;
-    padding: 10rem 0;
+    padding: 2rem 0;
     /* Ajuste de padding para mais conforto */
     margin: 0px 0px 12rem 0px;
     /* Ajuste da margem inferior */
@@ -485,12 +472,16 @@ Adicionando a animação para os elementos de texto
     margin-top: 0rem;
     margin-bottom: 1.5rem;      
     padding: 5rem;
-    
-    
 }
 
 /* Responsividade: Ajuste para telas menores */
+
 @media (max-width: 768px) {
+
+    .educacao-tech {
+        padding: 0rem 0;
+        margin-bottom: 6rem;
+    }
     .educacao-tech h2 {
         font-size: 3rem;
         margin-left: 2rem;
@@ -526,6 +517,11 @@ Adicionando a animação para os elementos de texto
     gap: 10rem;
     margin: 0 auto;
     padding: 0 10%;
+}
+@media (max-width: 768px) {
+    .container-educacao-tech {
+        gap: 0rem;
+    }
 }
 
 /* Coluna de imagem */
@@ -622,7 +618,7 @@ Adicionando a animação para os elementos de texto
 .tecnologia-item {
     color: #ED145B;
     font-weight: bold;
-    margin: 0;
+    margin: 10;
     margin-left: 2vh !important; 
 }
 
@@ -669,7 +665,7 @@ Adicionando a animação para os elementos de texto
     background-attachment: fixed;
     width: 100%;
     height: 70vh;
-    /* Mantém-se ótimo, proporcional à altura da viewport */
+    /* Mantém-se , proporcional à altura da viewport */
     padding: 10vh 0;
     /* Padding superior e inferior baseado na altura da tela */
     color: white;
@@ -760,7 +756,6 @@ Adicionando a animação para os elementos de texto
 .texto-imagem-preto h2 {
     color: #ACC1CC;
     font-size: 5vw;
-    /* De 80px para 5vw */
     text-transform: uppercase;
     margin-bottom: 7vh;
     font-weight: 500;
@@ -773,7 +768,6 @@ Adicionando a animação para os elementos de texto
 .texto-imagem-preto h3 {
     color: #ACC1CC;
     font-size: 2vw;
-    /* De 28px para 2vw */
     font-weight: 500;
     text-transform: uppercase;
     width: 100%;
@@ -894,7 +888,7 @@ Adicionando a animação para os elementos de texto
    FOOTER (RODAPÉ)
 ============================================ */
 .footer {
-    background-color: #000000 !important;
+    background-color: #000000;
     text-align: center;
     height: 60vh;
     width: 100%;
@@ -906,61 +900,96 @@ Adicionando a animação para os elementos de texto
     font-weight: 500;
 }
 
+.footer-texto {
+    width: 100%;
+    box-sizing: border-box;
+}
+
 .footer-texto h3 {
     color: #ACC1CC;
     font-size: 7vh;
     text-transform: uppercase;
-    margin-top: 20px;
-    position: relative;
-    top: -100px;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 100%;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    display: block;
 }
+
+.footer-texto h3 .indentado {
+    display: inline;
+    padding-left: 0.5rem;
+    white-space: nowrap;
+}
+
+/* Responsividade para telas pequenas */
+@media (max-width: 768px) {
+    .footer-texto h3 {
+        font-size: 4.5vh;
+        white-space: normal;
+        line-height: 1.2;
+        width: 90%;
+        display: block;
+        margin: 0 auto;
+    }
+
+    .footer-texto h3 .indentado {
+        display: block;
+        padding-left: 2rem;
+        text-indent: -1rem;
+        margin-top: 0.5rem;
+        white-space: normal;
+    }
+}
+
+@media (max-width: 412px) {
+    .footer-texto h3 {
+        font-size: 2rem;
+        line-height: 1.3;
+        width: 90%;
+        display: block;
+        white-space: normal;
+        text-align: center;
+    }
+
+    .footer-texto h3 .indentado {
+        padding-left: 1.5rem;
+        text-indent: -0.75rem;
+        margin-top: 0.5rem;
+    }
+}
+
 
 /* ============================================ 
    BOTÃO ENTRE EM CONTATO (ESTILOS COMPLETOS)
 ============================================ */
 .btn-contato {
     background: transparent;
-    /* Fundo transparente */
     color: #ED145B;
-    /* Cor do texto */
     border: 1px solid #ED145B;
-    /* Borda vermelha */
-    padding: 15px 15px;
-    /* Espaçamento interno */
+    padding: 1rem 1.5rem;
     border-radius: 2px;
-    /* Bordas levemente arredondadas */
-    font-size: 3vh;
-    /* Tamanho da fonte */
+    font-size: 1.5rem;
     transition: all 0.3s ease;
-    /* Transição suave para todos os efeitos */
     cursor: pointer;
-    /* Cursor pointer */
     font-family: 'Gotham HTF', sans-serif;
-    /* Fonte personalizada */
     text-transform: uppercase;
-    /* Texto em maiúsculas */
     letter-spacing: 1px;
-    /* Espaçamento entre letras */
     position: relative;
-    /* Posição relativa para efeitos */
     overflow: hidden;
-    /* Esconde overflow para efeitos */
     z-index: 1;
-    /* Camada superior */
-    margin-top: 0px;
-    /* Espaço acima do botão */
+    margin-top: 8vh;
+    text-align: center;
 }
 
 /* Efeito hover no botão */
 .btn-contato:hover {
     background: #ED145B;
-    /* Fundo vermelho */
-    color: rgb(0, 0, 0);
-    /* Cor do texto muda para preto */
+    color: #000000;
     box-shadow: 0 0 10px rgba(237, 20, 91, 0.5);
-    /* Sombra vermelha */
     font-weight: 500;
-    /* Peso da fonte */
 }
 
 /* Efeito de brilho ao passar o mouse */
@@ -984,6 +1013,29 @@ Adicionando a animação para os elementos de texto
 .btn-contato:hover::before {
     left: 100%;
 }
+
+/* Responsividade geral */
+@media (max-width: 768px) {
+    .btn-contato {
+        font-size: 1.25rem;
+        padding: 0.75rem 1.25rem;
+        margin-top: 6vh;
+    }
+}
+
+@media (max-width: 480px) {
+    .btn-contato {
+        font-size: 1rem;
+        padding: 0.6rem 1rem;
+        margin-top: 4vh;
+        width: 100%;
+        max-width: 300px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
 
 /* ============================================ 
    ESTILOS DO LIGHTBOX
